@@ -65,7 +65,7 @@ bash_template = """#!/bin/bash
 
 BATCHDIR=${PWD}
 
-export SCRAM_ARCH=slc6_amd64_gcc491
+export SCRAM_ARCH=slc6_amd64_gcc493
 cd MAIN_WORKDIR
 eval `scram runtime -sh`
 
@@ -82,7 +82,17 @@ cp -v MAIN_WORKDIR/jetpt_data_mc_RunIISpring15_25ns_MINIAOD.root $BATCHDIR/
 cp -v MAIN_WORKDIR/jetpt_data_mc_SingleMuonTagged_QCDMuEnriched_76XMiniAODv2.root $BATCHDIR/
 cp -v MAIN_WORKDIR/FatJetPt_data_mc_DoubleMuonTagged_QCDMuEnriched_76XMiniAODv2.root $BATCHDIR/
 cp -v MAIN_WORKDIR/SoftDropSubJetPt_data_mc_DoubleMuonTagged_QCDMuEnriched_76XMiniAODv2.root $BATCHDIR/
+cp -v MAIN_WORKDIR/subjetptbalance_Hbb_QCDbb_pt425_weight.root $BATCHDIR/
+cp -v MAIN_WORKDIR/massSoftDrop_Hbb_QCDbb_pt425_weight.root $BATCHDIR/
+cp -v MAIN_WORKDIR/jetNTracks_Hbb_QCDbb_pt425_weight.root $BATCHDIR/
+cp -v MAIN_WORKDIR/SV1EnergyRatio_Hbb_QCDbb_pt425_weight.root $BATCHDIR/
+cp -v MAIN_WORKDIR/IPSig1stAboveB_Hbb_QCDbb_pt425_weight.root $BATCHDIR/
 cp -v MAIN_WORKDIR/CSVv2.csv $BATCHDIR/
+cp -v MAIN_WORKDIR/Summer15_25nsV7_MC_L1FastJet_AK8PFchs.txt $BATCHDIR/
+cp -v MAIN_WORKDIR/Summer15_25nsV7_MC_L2Relative_AK8PFchs.txt $BATCHDIR/
+cp -v MAIN_WORKDIR/Summer15_25nsV7_MC_L3Absolute_AK8PFchs.txt $BATCHDIR/
+cp -v MAIN_WORKDIR/Summer15_25nsV7_MC_Uncertainty_AK8PFchs.txt $BATCHDIR/
+
 cd $BATCHDIR
 echo "Running CMSSW job"
 cmsRun CMSSW_cfg.py CFG_PARAMETERS
@@ -138,7 +148,7 @@ def main():
   # copy the CMSSW cfg file to the cfg_files_dir
   shutil.copyfile(cmssw_cfg,os.path.join(main_workdir,'CMSSW_cfg.py'))
 
-  # look for pileup distribution and CSV SF files and copy them into main_workdir
+  # look for pileup distribution, CSV SF files, pt and other weight files and copy them into main_workdir
   cfg_dirname = os.path.dirname(cmssw_cfg)
   if cfg_dirname=='':
     cfg_dirname = os.getcwd()
@@ -161,8 +171,27 @@ def main():
       shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
     if re.search("^SoftDropSubJetPt_data_mc_DoubleMuonTagged_QCDMuEnriched_76XMiniAODv2.root$", filename):
       shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^subjetptbalance_Hbb_QCDbb_pt425_weight.root$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^massSoftDrop_Hbb_QCDbb_pt425_weight.root$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^jetNTracks_Hbb_QCDbb_pt425_weight.root$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^SV1EnergyRatio_Hbb_QCDbb_pt425_weight.root$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^IPSig1stAboveB_Hbb_QCDbb_pt425_weight.root$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
     if re.search("^CSVv2.csv$", filename):
       shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^Summer15_25nsV7_MC_L1FastJet_AK8PFchs.txt$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^Summer15_25nsV7_MC_L2Relative_AK8PFchs.txt$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^Summer15_25nsV7_MC_L3Absolute_AK8PFchs.txt$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+    if re.search("^Summer15_25nsV7_MC_Uncertainty_AK8PFchs.txt$", filename):
+      shutil.copy(os.path.join(cfg_dirname,filename),main_workdir)
+
   # open and read the dataset_list file
   dataset_list_file = open(dataset_list,"r")
   dataset_list_lines = dataset_list_file.readlines()

@@ -1,5 +1,35 @@
 #!/bin/bash
 
+./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_Zratio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_Zratio76x_reweight.txt -q cmscaf1nh
+./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_SV1EnergyRatio_Zratio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_SV1EnergyRatio76x_Zratio76x_reweight.txt -q cmscaf1nh
+# 
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_usePruned_fjpt425_50m_SingleMuTag_TightMu_SV1EnergyRatio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_76x_SingleMuTag_TightMu_Pruned_SV1EnergyRatio76x_reweight.txt -q cmscaf1nh
+./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_usePruned_fjpt425_50m_SingleMuTag_TightMu_Zratio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_76x_SingleMuTag_TightMu_Pruned_Zratio76x_reweight.txt -q cmscaf1nh
+./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_usePruned_fjpt425_50m_SingleMuTag_TightMu_SV1EnergyRatio_Zratio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_76x_SingleMuTag_TightMu_Pruned_SV1EnergyRatio76x_Zratio76x_reweight.txt -q cmscaf1nh
+
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_usePruned_fjpt425_50m_SingleMuTag_TightMu -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_76x_SingleMuTag_TightMu_Pruned.txt -q cmscaf1nh
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_BulkGravTohhTohbbhbb_narrow_M-1000_usePruned_fjpt425_50m_SingleMuTag_TightMu_signal -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_76x_SingleMuTag_TightMu_Pruned_signal.txt -q cmscaf1nh
+
+
+#./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_IPSig1stAboveB_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_IPSig1stAboveB76x_reweight.txt -q cmscaf1nh
+
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_SV1EnergyRatio_jetNTracks_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_SV1EnergyRatio76x_jetNTracks76x_reweight.txt -q cmscaf1nh
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_SV1EnergyRatio_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_SV1EnergyRatio76x_reweight.txt -q cmscaf1nh
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_jetNTracks_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_jetNTracks76x_reweight.txt -q cmscaf1nh
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_massSoftDrop_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_massSoftDrop76x_reweight.txt -q cmscaf1nh
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag_reweight -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_subjetPtBalance76x_reweight.txt -q cmscaf1nh
+
+
+# ./createAndSubmitJobs.py -w rizki_LXBatch_BulkGravTohhTohbbhbb_narrow_M-1000_useSoftDrop_fjpt425_50m_DoubleMuTag -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_subjetPtBalance76x_signal.txt -q cmscaf1nh
+# 
+# ./createAndSubmitJobs.py -w rizki_LXBatch_QCDMuEnriched_useSoftDrop_fjpt425_50m_DoubleMuTag -c btagvalidation_cfg.py -d alice_datasetList_LxplusJob_subjetPtBalance76x.txt -q cmscaf1nh
 
 #./createAndSubmitJobs.py -w rizki_LXBatch_BoostedTaggerValidation_cutFlow_BTagMu_QCDMuEnriched_usePruned_fjpt330_eta2p4_DoubleMuTag_50m200_reweightPT -c btagvalidation_cfg.py -d rizki_datasetList_BoostedTaggerValidation_cutFlow_BTagMu_QCDMuEnriched_usePruned_fjpt330_eta2p4_DoubleMuTag_m50to200_reweightPT.txt -q cmscaf1nh
 
